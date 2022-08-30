@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Phone Hunter</title>
+  <!-- // Bootstrap CSS CDN Link  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+  <!-- // Header-Section -->
+  <header class="sticky-top p-2 bg-light">
+    <!-- // Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <!-- Container -->
+      <div class="container">
+        <!-- // Logo -->
+        <a class="navbar-brand" href="index.html">
+          <h3 class="">Phone Hunter</h3>
+        </a>
+        <!-- // Hamburger Icon -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- // Navbar Item -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <nav class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+          </nav>
+          <div class="d-flex">
+            <input id="search-field" class="form-control me-2" type="search" placeholder="Search your phone!"
+              aria-label="Search" value="Apple">
+            <button onclick="searchPhoneLimit()" class="btn btn-outline-primary" type="submit">Search</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- // Main-Section -->
+  <main class="container">
+    <!-- // Products-Section -->
+    <section class="phones-section my-3">
+      <!-- // Phones Container -->
+      <div id="phones-container" class="row row-cols-1 row-cols-md-3 g-4">
+      </div>
+      <!-- // Not Found  -->
+      <div id="not-found" class="d-none card my-5 text-center">
+        <h2 class="text-warning">OOPPS!!! Result's Not Fund !!!!</h2>
+        <h5>Please Search By Product Name!!!</h5>
+      </div>
+      <!-- // Show All  -->
+      <div id="show-all" class="text-center d-none my-3">
+        <button onclick="searchPhoneAll()" class="btn btn-success">Show All</button>
+      </div>
+      <!-- // Spinner  -->
+      <div id="spinner" class="text-center d-none">
+        <div class="spinner-grow text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </section>
+    <!-- // Modal Section  -->
+    <section>
+      <!-- Modal -->
+      <div class="modal fade" id="phoneDetailsModal" tabindex="-1" aria-labelledby="phoneDetailsLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!-- // Modal Title  -->
+              <h5 class="modal-title" id="phoneDetailsLabel"></h5>
+              <!-- // Modal Close Icon  -->
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- // Modal Body  -->
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-sm-12">
+                  <table id="phone-details" class="table table-bordered table-striped table-responsive ">
+                    <!-- Display Phone Details -->
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- // Footer  -->
+  <footer class="py-3 border-top">
+    <p class="text-center">Copyright © 2022 Phone Hunter. All rights reserved</p>
+  </footer>
+
+  <!-- // Bootstrap Script CDN Link  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <!-- // Script  -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
